@@ -1,3 +1,7 @@
+/*
+	顺序表
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -118,7 +122,7 @@ int OrderDelete(OrderList* list,int position) {
 	list->size--;
 }
 
-int main() {
+int main2() {
 	OrderList list;
 	initOrderList(&list,10);
 	for (int i = 0; i < 40; i++)
