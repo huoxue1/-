@@ -1,5 +1,6 @@
 /*
 	顺序队
+	先进先出
 */
 
 #include<stdio.h>
@@ -83,6 +84,23 @@ int OrderListQueuePop(OrderListQueue* queue) {
 void OrderListQueueForEach(OrderListQueue* queue) {
 	for (int i = 0; i < queue->size-1; i++)
 	{
-		printf("%d ");
+		printf("%d ",queue->datas[i]);
 	}printf("\n");
+}
+
+
+int main3() {
+	OrderListQueue queue;
+	initOrderListQueue(&queue,10);
+
+	for (int i = 0; i < 10; i++)
+	{
+		OrderListQueuePush(&queue, i);
+	}
+	OrderListQueueForEach(&queue);
+	for (int i = 0; i < 5; i++)
+	{
+		printf("出队结果：%d\n", OrderListQueuePop(&queue));
+	}
+	OrderListQueueForEach(&queue);
 }
